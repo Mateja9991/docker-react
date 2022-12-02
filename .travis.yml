@@ -6,4 +6,5 @@ services:
 before_install:
   - docker build -t mateja/docker-react -f Dockerfile.dev .
 script:
+  - ls
   - docker run mateja/docker-react npm run test -- --coverage
