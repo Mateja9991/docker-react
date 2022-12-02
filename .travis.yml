@@ -5,7 +5,18 @@ services:
 
 before_install:
   - docker build -t mateja/docker-react -f Dockerfile.dev .
+
 script:
-  - ls
-  - ls src
   - docker run -e CI=true mateja/docker-react yarn test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'docker-react'
+  env: 'Dockerreact-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-232074787428'
+  bucket_path: 'docker-react'
+  on:
+    branch: main
+  acces_key_id:"$ACCES_KEY_ID"
+  secret_access_key:"$SECRET_ACCESS_KEY"
