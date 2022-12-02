@@ -1,5 +1,4 @@
 {
-	"rootDir": ["."],
-	"setupTestFrameworkScriptFile": "<rootDir>/src/__test__/App.test.js",
-	"testMatch": ["<rootDir>/src/__test__/*(*.)+(test).+(tsx|ts|js)"]
+	"rootDir": ["./src"],
+	"testMatch": ["<rootDir>/__test__/*(*.)+(test).+(tsx|ts|js)"]
 }
