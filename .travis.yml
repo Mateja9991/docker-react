@@ -8,4 +8,4 @@ before_install:
 script:
   - ls
   - ls src
-  - docker run mateja/docker-react yarn test
+  - docker run -e CI=true mateja/docker-react yarn test
