@@ -1,9 +1,9 @@
 language: generic
 sudo: required
-services: 
+services:
   - docker
 
 before_install:
   - docker build -t mateja/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true mateja/docker-react yarn test
+  - docker run mateja/docker-react yarn test
