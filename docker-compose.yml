@@ -1,7 +1,7 @@
 version: '3'
 services:
   react-app:
-    build: 
+    build:
       context: .
       dockerfile: 'Dockerfile.dev'
     ports:
@@ -10,12 +10,10 @@ services:
       - /home/app/node_modules
       - .:/home/app
   test-react-app:
-    build: 
+    build:
       context: .
       dockerfile: 'Dockerfile.dev'
     volumes:
       - /home/app/node_modules
       - .:/home/app
-    command: ["yarn", "test"]
-        
-
+    command: ['npm', 'run', 'test']
